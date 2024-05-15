@@ -3,12 +3,29 @@
   padding: 0 !important;
   box-sizing: border-box;
 }
+#main {
+  background: url("./../img/earth-from-space-1442849073.jpg");
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+.btn-login {
+  padding: 8px 30px !important;
+  display: inline-block;
+  background-color: white;
+  border: 2px solid white !important;
+  font-weight: 500;
+  font-size: 18px;
+}
+.btn-login:hover {
+  color: white !important;
+}
 .header {
   background-color: #272933;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .nav {
-  background-color: #3256a4;
+  background-color: white;
   height: 100vh;
 }
 .nav-list {
@@ -19,18 +36,60 @@
   display: inline-block;
 }
 .nav-list li:hover {
-  background-color: white;
+  background-color: #3256a4;
 }
 .nav-list li:hover a {
-  color: #3256a4 !important;
+  color: white !important;
 }
 .nav-list a {
   text-decoration: none;
   font-size: 18px;
-  color: white !important;
+  color: #3256a4 !important;
   font-weight: 500;
 }
 .main-body {
   background-color: #f5f7ff;
   flex: 1;
 }
+.date-area {
+  margin: 12rem auto;
+  background-color: transparent;
+}
+.date h5 {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 20px !important;
+  border-radius: 7px;
+  font-size: 18px;
+  color: #3256a4;
+  -webkit-text-stroke: 0.3px;
+}
+
+.footer {
+  background-color: #272933;
+}
+.social-medias a {
+  text-decoration: none;
+  margin-right: 10px;
+}
+.footer-copyright {
+  color: white;
+}
+/* Login.html */
+#login-form input,
+#login-form button {
+  padding: 10px 20px !important;
+}
+.login-main {
+  background-color: #00162b;
+  color: white;
+}
+.login-area {
+  margin: 200px auto;
+  width: 50%;
+}
+/* allUsers.html */
+.logout-btn {
+  font-weight: 500;
+}
+

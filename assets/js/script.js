@@ -1,3 +1,4 @@
+// Local Time
 const dateTime = document.querySelector(".date-time");
 
 function writeLocalTime() {
@@ -10,7 +11,13 @@ function writeLocalTime() {
 }
 writeLocalTime();
 
-//
-const data = fetch("")
-  .then(response => response.json)
-  .then(datas => {});
+// Footer Copyright
+const footerCopyright = document.querySelector(".footer-copyright");
+
+function writeCopyrightYear() {
+  let date = new Date();
+  let year = date.getFullYear();
+  let fullContent = `©${year}. Bütün hüquqlar qorunur`;
+  footerCopyright.textContent = fullContent;
+}
+writeCopyrightYear();

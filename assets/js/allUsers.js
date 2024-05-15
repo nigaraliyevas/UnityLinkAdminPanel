@@ -1,0 +1,1 @@
+const baIcon=document.querySelector(".bar-icon")

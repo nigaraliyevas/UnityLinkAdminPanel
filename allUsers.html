@@ -19,30 +19,52 @@
         <div class="enter-main d-flex justify-content-between align-items-center">
           <div class="enter-left">
             <div class="logo">
-              <a href="./index.html" class="enter-left__logo-link">
+              <a href="./allUsers.html" class="enter-left__logo-link">
                 <img src="./assets/img/4simlogoaz.svg" alt="Logo" class="enter-left__logo" />
               </a>
             </div>
           </div>
           <div class="enter-right d-flex gap-3 align-items-center">
-            <div class="enter-right__user">
-              <p onclick="window.open('./login.html')" class="m-0 btn btn-login">Daxil ol</p>
+            <div class="enter-right__user d-flex align-items-center gap-5">
+              <h5 class="text-white m-0">Admin</h5>
+              <p onclick="window.open('./index.html')" class="btn btn-secondary m-0 px-4 py-2 logout-btn">Çıxış</p>
+            </div>
+            <div class="enter-right__sidebar">
+              <i class="fa-solid fa-bars fa-lg d-lg-none bar-icon" style="color: #ffffff"></i>
             </div>
           </div>
         </div>
       </div>
     </header>
-    <main class="main" id="main">
-      <div class="container">
-        <section id="main-section">
-          <section class="date-area text-center text-white">
-            <h1 class="m-4">UnityLink-in Admin Panelinə Xoş Gəldiniz!</h1>
-            <div class="m-4">
-              <h5 class="date-time"></h5>
+    <main class="main">
+      <section id="main-section">
+        <div class="main-divide d-flex">
+          <div class="d-none d-lg-flex flex-column flex-shrink-0 bg-light" style="width: 280px" bis_skin_checked="1">
+            <ul class="nav nav-pills flex-column mb-auto nav-list">
+              <li class="nav-item">
+                <a href="./allUsers.html" class="nav-link" aria-current="page">
+                  <i class="fa-solid fa-users"></i>
+                  Bütün İstifadəçilər
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="main-body">
+            <section class="text-black">
+              <div class="date m-4 d-flex justify-content-end">
+                <h5 class="date-time"></h5>
+              </div>
+            </section>
+            <div class="all-users">
+              <div class="all-users__body">
+                <h3 class="text-center">İstifadəçilər</h3>
+
+              </div>
             </div>
-          </section>
-        </section>
-      </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer py-4 px-5">
       <div class="container">
@@ -50,7 +72,7 @@
           <div class="row w-100 align-items-center justify-content-between">
             <div class="col-lg-4 col-md-4 col-sm-4">
               <div class="logo">
-                <a href="./index.html" class="enter-left__logo-link">
+                <a href="./allUsers.html" class="enter-left__logo-link">
                   <img src="./assets/img/4simlogoaz.svg" alt="Logo" class="enter-left__logo" />
                 </a>
               </div>
@@ -94,6 +116,6 @@
         </div>
       </div>
     </footer>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/allUsers.js"></script>
   </body>
 </html>
