@@ -1,8 +1,36 @@
 * {
   margin: 0;
-  padding: 0;
+  padding: 0 !important;
   box-sizing: border-box;
 }
 .header {
   background-color: #272933;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.nav {
+  background-color: #3256a4;
+  height: 100vh;
+}
+.nav-list {
+  list-style: none;
+}
+.nav-list a {
+  padding: 1rem !important;
+  display: inline-block;
+}
+.nav-list li:hover {
+  background-color: white;
+}
+.nav-list li:hover a {
+  color: #3256a4 !important;
+}
+.nav-list a {
+  text-decoration: none;
+  font-size: 18px;
+  color: white !important;
+  font-weight: 500;
+}
+.main-body {
+  background-color: #f5f7ff;
+  flex: 1;
 }
