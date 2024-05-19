@@ -95,8 +95,8 @@
 .all-users__body h3 {
   color: #3256a4;
 }
-#emailStatusFilter,
-#emailStatusFilter:active {
+#select,
+#select:active {
   padding: 10px !important;
   border: 2px solid #3256a4;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -104,7 +104,7 @@
   font-weight: 500;
   color: #3256a4;
 }
-#emailStatusFilter option {
+#select option {
   color: #3256a4;
   font-weight: 500;
 }
@@ -126,9 +126,18 @@ thead th {
   padding: 10px 15px !important;
   font-weight: 500;
 }
-.activated {
+.activated,
+.update-btn,
+.search-btn {
   width: 80px;
   padding: 10px !important;
+  font-weight: 500;
+}
+.activity-btn {
+  cursor: pointer;
+}
+.activity-btn:first-child {
+  margin-right: 15px;
 }
 .search-input {
   border: 2px solid #3256a4;
@@ -140,7 +149,7 @@ thead th {
 .table-body tr td {
   text-align: center;
   width: max-content;
-  padding: 5px !important;
+  padding: 10px !important;
 }
 
 /* .all-users__table {

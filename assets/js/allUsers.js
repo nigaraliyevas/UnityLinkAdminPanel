@@ -1,14 +1,15 @@
 const barIcon = document.querySelector(".bar-icon");
 
 async function fetchUsers(page = 1) {
-  const response = await fetch(`http://nadir.somee.com/api/usersmanagment/getusers/${page}`);
+  const response = await fetch(`http://nadir.somee.com/api/usersmanagment/getusers/${page}/false/false/false`);
   return response.json();
 }
 
 function createUserRow(user) {
   const row = document.createElement("tr");
+  row.dataset.isActive = user.emailConfirmed; // Initial status
   row.innerHTML = `
-    <td class="d-none" id="${user.id}">ID</td>
+    <td class="d-none user" id="${user.id}">ID</td>
     <td><img src="${user.imageUrl}" alt="${user.role}"/></td>
     <td>${user.fullName}</td>
     <td>${user.email}</td>
@@ -17,15 +18,19 @@ function createUserRow(user) {
     <td>${user.userName}</td>
     <td>${user.phoneNumber}</td>
     <td>
-      <select>
+      <select class="role-select">
         <option>${user.role}</option>
-        <option>${user.role}</option>
-        <option>${user.role}</option>
+        <option>admin</option>
+        <option>moderator</option>
       </select>
     </td>
     <td>${checkStatus(user.emailConfirmed)}</td>
     <td>${checkStatus(user.phoneConfirmed)}</td>
-    <td><button type="button" class="btn btn-success activated">Aktiv et</button></td>
+    <td>
+      <i class="fa-regular fa-square-check fa-xl active-btn activity-btn" style="color: #157347;"></i>
+      <i class="fa-solid fa-square-xmark fa-xl deactive-btn activity-btn" style="color: #c71a1a;"></i>
+    </td>
+    <td><button type="button" class="btn btn-warning text-white update-btn">Yenilə</button></td>
   `;
   return row;
 }
@@ -37,6 +42,8 @@ function populateTable(users) {
     const row = createUserRow(user);
     table.appendChild(row);
   });
+  getActivityStatus();
+  updateUser();
 }
 
 function checkStatus(status) {
@@ -96,3 +103,52 @@ async function init() {
 }
 
 init();
+
+function getActivityStatus() {
+  const activityBtns = document.querySelectorAll(".activity-btn");
+  activityBtns.forEach(btn => {
+    btn.addEventListener("click", function () {
+      const row = this.closest("tr");
+      const isActive = this.classList.contains("active-btn");
+      return (row.dataset.isActive = isActive);
+    });
+  });
+}
+function getRole() {
+  const roleSelects = document.querySelectorAll(".role-select");
+  roleSelects.forEach(select => {
+    select.addEventListener("change", function () {
+      return (selectedValue = this.value);
+    });
+  });
+}
+function updateUser() {
+  const updateBtn = document.querySelectorAll(".update-btn");
+  updateBtn.forEach(update => {
+    update.addEventListener("click", function () {
+      const row = this.closest("tr");
+      const id = row.querySelector(".user").id;
+      const roleSelect = row.querySelector(".role-select").value;
+      const isActive = row.dataset.isActive === "true";
+      console.log(typeof id, +" ", roleSelect + " ", isActive);
+      fetch("http://nadir.somee.com/api/usersmanagment/UpdateUser/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          UserId: id,
+          IsActive: isActive,
+          RoleName: roleSelect,
+        }),
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log("Success:", data);
+        })
+        .catch(error => {
+          console.error("Error:", error);
+        });
+    });
+  });
+}

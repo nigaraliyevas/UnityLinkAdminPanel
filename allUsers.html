@@ -69,25 +69,23 @@
               </div>
             </section>
             <div class="all-users">
-              <div class="container">
+              <div class="container-lg">
                 <div class="all-users__body">
                   <div class="d-flex justify-content-between align-items-center mb-4">
                     <h3 class="d-inline-block">İstifadəçilər</h3>
                     <div class="d-flex gap-2">
                       <div class="all-users__filter">
-                        <select name="" id="emailStatusFilter">
+                        <select name="" id="select">
                           <option value="all">Bütün İstifadəçilər</option>
-                          <option value="all">Aktiv istifadəçilər</option>
-                          <option value="all">Deaktiv istifadəçilər</option>
-                          <option value="all">Email-i təsdiq edilmiş istifadəçilər</option>
-                          <option value="all">Email-i təsdiq edilməmiş istifadəçilər</option>
-                          <option value="all">Nömrəsi təsdiq edilmiş istifadəçilər</option>
-                          <option value="all">Nömrəsi təsdiq edilməmiş istifadəçilər</option>
+                          <option value="confirmedEmail">Email-i təsdiq edilmiş istifadəçilər</option>
+                          <option value="unconfirmedEmail">Email-i təsdiq edilməmiş istifadəçilər</option>
+                          <option value="confirmedNumber">Nömrəsi təsdiq edilmiş istifadəçilər</option>
+                          <option value="unconfirmedNumber">Nömrəsi təsdiq edilməmiş istifadəçilər</option>
                         </select>
                       </div>
                       <form>
                         <input type="text" placeholder="İstifadəçini axtarış edin" class="p-2 search-input" />
-                        <button class="btn btn-success p-2">Axtar</button>
+                        <button class="btn btn-success p-2 search-btn">Axtar</button>
                       </form>
                     </div>
                   </div>
@@ -106,6 +104,7 @@
                           <th scope="col">Email Status</th>
                           <th scope="col">Telefon Status</th>
                           <th scope="col">Aktiv Status</th>
+                          <th scope="col" class="align-middle"><i class="fa-solid fa-gears fa-2xl" style="color: #00162b;"></i></th>
                         </tr>
                       </thead>
                       <tbody class="table-body"></tbody>
