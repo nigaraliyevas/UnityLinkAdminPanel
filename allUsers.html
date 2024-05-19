@@ -39,12 +39,24 @@
     <main class="main">
       <section id="main-section">
         <div class="main-divide d-flex">
-          <div class="d-none d-lg-flex flex-column flex-shrink-0 bg-light" style="width: 280px" bis_skin_checked="1">
+          <div class="hidden-nav d-none d-lg-flex flex-column flex-shrink-0 bg-light" style="width: 280px" bis_skin_checked="1">
             <ul class="nav nav-pills flex-column mb-auto nav-list">
               <li class="nav-item">
                 <a href="./allUsers.html" class="nav-link" aria-current="page">
                   <i class="fa-solid fa-users"></i>
                   Bütün İstifadəçilər
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./confirmed.html" class="nav-link" aria-current="page">
+                  <i class="fa-solid fa-check"></i>
+                  Təsdiqlənmiş
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./unconfirmed.html" class="nav-link" aria-current="page">
+                  <i class="fa-solid fa-calendar-xmark"></i>
+                  Təsdiqlənməmiş
                 </a>
               </li>
             </ul>
@@ -57,9 +69,78 @@
               </div>
             </section>
             <div class="all-users">
-              <div class="all-users__body">
-                <h3 class="text-center">İstifadəçilər</h3>
-
+              <div class="container">
+                <div class="all-users__body">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="d-inline-block">İstifadəçilər</h3>
+                    <div class="d-flex gap-2">
+                      <div class="all-users__filter">
+                        <select name="" id="select">
+                          <option value="all">Bütün İstifadəçilər</option>
+                          <option value="all">Aktiv istifadəçilər</option>
+                          <option value="all">Deaktiv istifadəçilər</option>
+                          <option value="all">Email-i təsdiq edilmiş istifadəçilər</option>
+                          <option value="all">Email-i təsdiq edilməmiş istifadəçilər</option>
+                          <option value="all">Nömrəsi təsdiq edilmiş istifadəçilər</option>
+                          <option value="all">Nömrəsi təsdiq edilməmiş istifadəçilər</option>
+                        </select>
+                      </div>
+                      <form>
+                        <input type="text" placeholder="İstifadəçini axtarış edin" class="p-2 search-input" />
+                        <button class="btn btn-success p-2">Axtar</button>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="all-users__table">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Şəkil</th>
+                          <th scope="col">Ad və Soyad</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Şirkət</th>
+                          <th scope="col">Vəzifə</th>
+                          <th scope="col">İstifadəçi adı</th>
+                          <th scope="col">Telefon</th>
+                          <th scope="col">Roles</th>
+                          <th scope="col">Email Status</th>
+                          <th scope="col">Telefon Status</th>
+                          <th scope="col">Aktiv Status</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-body">
+                        <!-- <tr>
+                          <td class="d-none" id="">ID</td>
+                          <td>
+                            <img src="./assets/img/iktfac.png" height="80" width="80" alt="user" class="" />
+                          </td>
+                          <td>Nigar Aliyeva</td>
+                          <td>naliyeva965@gmail.com</td>
+                          <td>Nerimanov Belediyyesi</td>
+                          <td>Operator</td>
+                          <td>nigaraliyevas</td>
+                          <td>+994556220000</td>
+                          <td>null</td>
+                          <td>
+                            <button type="button" class="btn btn-success activated">Aktiv et</button>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-success activated">Aktiv et</button>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-success activated">Aktiv et</button>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-danger remove-user">Sil</button>
+                          </td>
+                        </tr> -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <nav class="d-flex justify-content-center mb-4">
+                  <div class="pagination pages"></div>
+                </nav>
               </div>
             </div>
           </div>
@@ -116,6 +197,8 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/common.js"></script>
     <script src="./assets/js/allUsers.js"></script>
   </body>
 </html>
