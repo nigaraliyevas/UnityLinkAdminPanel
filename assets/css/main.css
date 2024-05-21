@@ -146,10 +146,246 @@ thead th {
 .table thead tr th {
   width: max-content;
 }
+.trow td:nth-of-type(2n) {
+  background-color: #fafafd;
+}
 .table-body tr td {
   text-align: center;
   width: max-content;
   padding: 10px !important;
+}
+.table-container {
+  max-width: 100%;
+}
+/* .all-users__table {
+  width: min(990px, 100%-3rem);
+  margin-inline: auto;
+} */
+
+/* Table responsivenes */
+@media (max-width: 576px) {
+  .hidden-nav {
+    width: 180px !important;
+  }
+  .nav-list a {
+    font-size: 15px;
+  }
+  .table-body {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .table-body tr {
+    width: 50%;
+  }
+  .table-body tr td {
+    width: 100%;
+    display: block;
+    width: 100%;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 8ch auto;
+    align-items: center;
+  }
+  table {
+    width: 100% !important;
+  }
+  td::before {
+    content: attr(data-cell) ":";
+    font-weight: 500;
+  }
+  td:first-child {
+    padding-top: 2rem;
+  }
+  td:last-child {
+    padding-bottom: 2rem;
+  }
+  th {
+    display: none;
+  }
+  tr {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .body-top {
+    display: block !important;
+    text-align: center;
+  }
+  .all-users__filter {
+    margin-bottom: 10px;
+  }
+  .search-area {
+    display: block !important;
+    margin-bottom: 10px;
+  }
+  .search-area button {
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .hidden-nav {
+    width: 180px !important;
+  }
+  .nav-list a {
+    font-size: 15px;
+  }
+  .table-body {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .table-body tr {
+    width: 50%;
+  }
+  .table-body tr td {
+    width: 100%;
+    display: block;
+    width: 100%;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 15ch auto;
+    align-items: center;
+  }
+  table {
+    width: 100% !important;
+  }
+  td::before {
+    content: attr(data-cell) ":";
+    font-weight: 500;
+  }
+  td:first-child {
+    padding-top: 2rem;
+  }
+  td:last-child {
+    padding-bottom: 2rem;
+  }
+  th {
+    display: none;
+  }
+  tr {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .body-top {
+    display: block !important;
+    text-align: center;
+  }
+  .all-users__filter {
+    margin-bottom: 10px;
+  }
+  .search-area {
+    display: block !important;
+    margin-bottom: 10px;
+  }
+  .search-area button {
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .hidden-nav {
+    width: 180px !important;
+  }
+  .nav-list a {
+    font-size: 15px;
+  }
+  .table-body {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .table-body tr {
+    width: 50%;
+  }
+  .table-body tr td {
+    width: 100%;
+    display: block;
+    width: 100%;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 15ch auto;
+    align-items: center;
+  }
+  table {
+    width: 100% !important;
+  }
+  td::before {
+    content: attr(data-cell) ":";
+    font-weight: 500;
+  }
+  th {
+    display: none;
+  }
+  tr {
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .hidden-nav {
+    width: 180px !important;
+  }
+  .nav-list a {
+    font-size: 15px;
+  }
+  .table-body {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .table-body tr {
+    width: 50%;
+  }
+  .table-body tr td {
+    width: 100%;
+    display: block;
+    width: 100%;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 15ch auto;
+    align-items: center;
+  }
+  table {
+    width: 100% !important;
+  }
+  td::before {
+    content: attr(data-cell) ":";
+    font-weight: 500;
+  }
+  th {
+    display: none;
+  }
+  tr {
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 1201px) {
+  .hidden-nav {
+    width: 180px !important;
+  }
+  .nav-list a {
+    font-size: 15px;
+  }
+  .table thead tr th {
+    width: max-content;
+    padding: 5px !important;
+    font-size: 15px;
+  }
+  .table thead th {
+    text-align: left;
+  }
+  .update-btn {
+    font-size: 15px;
+  }
+  .table-body tr td {
+    text-align: left;
+    width: 200px !important;
+    padding: 5px !important;
+    font-size: 15px;
+  }
+  .body-top {
+    font-size: 15px;
+  }
+  .date-time {
+    font-size: 15px !important;
+  }
+  .body-top h3 {
+    font-size: 22px;
+  }
 }
 
 /* .all-users__table {

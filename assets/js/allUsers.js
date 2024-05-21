@@ -21,29 +21,31 @@ function getFilterParams(filter) {
 
 function createUserRow(user) {
   const row = document.createElement("tr");
-  row.dataset.isActive = user.emailConfirmed; // Initial status
+  row.classList.add("trow");
+  // row.dataset.isActive = user.emailConfirmed;
   row.innerHTML = `
-    <td class="d-none user" id="${user.id}">ID</td>
-    <td><img src="${user.imageUrl}" alt="${user.role}"/></td>
-    <td>${user.fullName}</td>
-    <td>${user.email}</td>
-    <td>${user.company}</td>
-    <td>${user.position}</td>
-    <td>${user.userName}</td>
-    <td>${user.phoneNumber}</td>
-    <td>
+    <td data-cell="id" row-header="" data-label="ID" class="d-none user" id="${user.id}">ID</td>
+    <td data-cell="Şəkil" row-header="" data-label="Şəkil"><img src="${user.imageUrl}" alt="${user.role}"/></td>
+    <td data-cell="Ad və Soyad" row-header="" data-label="Ad və Soyad">${user.fullName}</td>
+    <td data-cell="Email" row-header="" data-label="Email">${user.email}</td>
+    <td data-cell="Şirkət" row-header="" data-label="Şirkət">${user.company}</td>
+    <td data-cell="Vəzifə" row-header="" data-label="Vəzifə">${user.position}</td>
+    <td data-cell="İstifadəçi adı" row-header="" data-label="İstifadəçi adı">${user.userName}</td>
+    <td data-cell="Telefon" row-header="" data-label="Telefon">${user.phoneNumber}</td>
+    <td data-cell="Roles" row-header="" data-label="Roles">
       <select class="role-select">
         ${getRoleOptions(user.role)}
       </select>
     </td>
-    <td>${checkStatus(user.emailConfirmed)}</td>
-    <td>${checkStatus(user.phoneConfirmed)}</td>
-    <td>${checkStatus(user.isActive)}</td>
-    <td>
+    <td data-cell="Email Status" row-header="" data-label="Email Status">${checkStatus(user.emailConfirmed)}</td>
+    <td data-cell="Aktiv Status" row-header="" data-label="Aktiv Status">${checkStatus(user.isActive)}</td>
+    <td data-cell="Aktivlik Statusunun Redaktəsi" row-header="" data-label="Aktivlik Statusunun Redaktəsi">
+      <div>
       <i class="fa-regular fa-square-check fa-xl active-btn activity-btn" style="color: #157347;"></i>
       <i class="fa-solid fa-square-xmark fa-xl deactive-btn activity-btn" style="color: #c71a1a;"></i>
+      </div>
     </td>
-    <td><button type="button" class="btn btn-warning text-white update-btn">Yenilə</button></td>
+    <td data-cell="⚙  " row-header="" data-label="Actions"><button type="button" class="btn btn-warning text-white update-btn">Yenilə</button></td>
   `;
   return row;
 }
@@ -69,7 +71,7 @@ function populateTable(users) {
     table.appendChild(row);
   });
   getActivityStatus();
-  getRole(); // Ensure role change is handled
+  getRole();
   updateUser();
 }
 
@@ -148,7 +150,6 @@ function getRole() {
     select.addEventListener("change", function () {
       const row = this.closest("tr");
       const selectedValue = this.value;
-      console.log(`Selected Role: ${selectedValue} for User ID: ${row.querySelector(".user").id}`);
     });
   });
 }
@@ -196,12 +197,10 @@ function searchUser() {
     });
 }
 
-// Call searchUser when search button is clicked
 const searchButton = document.querySelector(".search-btn");
 searchButton.addEventListener("click", searchUser);
 
-// Event listener for filter dropdown
 const filterSelect = document.getElementById("select");
 filterSelect.addEventListener("change", function () {
-  loadPage(1, this.value); // Load page with selected filter
+  loadPage(1, this.value);
 });

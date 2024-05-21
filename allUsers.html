@@ -39,8 +39,8 @@
     <main class="main">
       <section id="main-section">
         <div class="main-divide d-flex">
-          <div class="hidden-nav d-none d-lg-flex flex-column flex-shrink-0 bg-light" style="width: 280px" bis_skin_checked="1">
-            <ul class="nav nav-pills flex-column mb-auto nav-list">
+          <div class="hidden-nav d-none d-lg-flex flex-column flex-shrink-0 bg-light h-100" style="width: 280px" bis_skin_checked="1">
+            <ul class="nav nav-pills flex-column nav-list">
               <li class="nav-item">
                 <a href="./allUsers.html" class="nav-link" aria-current="page">
                   <i class="fa-solid fa-users"></i>
@@ -61,7 +61,6 @@
               </li>
             </ul>
           </div>
-
           <div class="main-body">
             <section class="text-black">
               <div class="date m-4 d-flex justify-content-end">
@@ -71,15 +70,15 @@
             <div class="all-users">
               <div class="container-lg">
                 <div class="all-users__body">
-                  <div class="d-flex justify-content-between align-items-center mb-4">
+                  <div class="d-flex justify-content-between align-items-center mb-4 body-top">
                     <h3 class="d-inline-block">İstifadəçilər</h3>
-                    <div class="d-flex gap-2">
+                    <div class="d-flex gap-2 search-area">
                       <div class="all-users__filter">
                         <select name="" id="select">
                           <option value="all">Bütün İstifadəçilər</option>
                           <option value="confirmedActivity">Aktivliyi təsdiq edilməmiş istifadəçilər</option>
                           <option value="unconfirmedEmail">Email-i təsdiq edilməmiş istifadəçilər</option>
-                          <option value="unconfirmedNumber">Nömrəsi təsdiq edilməmiş istifadəçilər</option>
+                          <!-- <option value="unconfirmedNumber">Nömrəsi təsdiq edilməmiş istifadəçilər</option> -->
                         </select>
                       </div>
                       <form>
@@ -89,26 +88,28 @@
                     </div>
                   </div>
                   <div class="all-users__table">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th scope="col">Şəkil</th>
-                          <th scope="col">Ad və Soyad</th>
-                          <th scope="col">Email</th>
-                          <th scope="col">Şirkət</th>
-                          <th scope="col">Vəzifə</th>
-                          <th scope="col">İstifadəçi adı</th>
-                          <th scope="col">Telefon</th>
-                          <th scope="col">Roles</th>
-                          <th scope="col">Email Status</th>
-                          <th scope="col">Telefon Status</th>
-                          <th scope="col">Aktiv Status</th>
-                          <th scope="col">Aktivlik Statusunun Redaktəsi</th>
-                          <th scope="col" class="align-middle"><i class="fa-solid fa-gears fa-2xl" style="color: #00162b"></i></th>
-                        </tr>
-                      </thead>
-                      <tbody class="table-body"></tbody>
-                    </table>
+                    <div class="table-container table-responsive-sm">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col">Şəkil</th>
+                            <th scope="col">Ad və Soyad</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Şirkət</th>
+                            <th scope="col">Vəzifə</th>
+                            <th scope="col">İstifadəçi adı</th>
+                            <th scope="col">Telefon</th>
+                            <th scope="col">Roles</th>
+                            <th scope="col">Email Status</th>
+                            <!-- <th scope="col">Telefon Status</th> -->
+                            <th scope="col">Aktiv Status</th>
+                            <th scope="col">Aktivlik Statusunun Redaktəsi</th>
+                            <th scope="col" class="align-middle"><i class="fa-solid fa-gears fa-2xl" style="color: #00162b"></i></th>
+                          </tr>
+                        </thead>
+                        <tbody class="table-body"></tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
                 <nav class="d-flex justify-content-center mb-4">
