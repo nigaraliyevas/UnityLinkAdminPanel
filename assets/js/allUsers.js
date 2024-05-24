@@ -1,4 +1,5 @@
 const barIcon = document.querySelector(".bar-icon");
+const usersPerPage = 10;
 
 async function fetchUsers(page = 1, filter = "all") {
   const filterParams = getFilterParams(filter);
@@ -9,24 +10,23 @@ async function fetchUsers(page = 1, filter = "all") {
 function getFilterParams(filter) {
   switch (filter) {
     case "confirmedActivity":
-      return "false/true/false"; // Assuming this means emailConfirmed is false, phoneConfirmed is true, isActive is false
+      return "false/true/false";
     case "unconfirmedEmail":
-      return "true/false/false"; // Assuming this means emailConfirmed is false
+      return "true/false/false";
     case "unconfirmedNumber":
-      return "true/false/true"; // Assuming this means phoneConfirmed is false
+      return "true/false/true";
     default:
-      return "false/false/false"; // Default case, if 'all' is selected
+      return "false/false/false";
   }
 }
 
 function createUserRow(user) {
   const row = document.createElement("tr");
   row.classList.add("trow");
-  // row.dataset.isActive = user.emailConfirmed;
   row.innerHTML = `
     <td data-cell="id" row-header="" data-label="ID" class="d-none user" id="${user.id}">ID</td>
     <td data-cell="Şəkil" row-header="" data-label="Şəkil"><img src="${user.imageUrl}" alt="${user.role}"/></td>
-    <td data-cell="Ad və Soyad" row-header="" data-label="Ad və Soyad">${user.fullName}</td>
+    <td class="fullname-trow" data-cell="Ad və Soyad" row-header="" data-label="Ad və Soyad">${user.fullName}</td>
     <td data-cell="Email" row-header="" data-label="Email">${user.email}</td>
     <td data-cell="Şirkət" row-header="" data-label="Şirkət">${user.company}</td>
     <td data-cell="Vəzifə" row-header="" data-label="Vəzifə">${user.position}</td>
@@ -54,11 +54,7 @@ function getRoleOptions(currentRole) {
   const roles = ["user", "admin", "moderator"];
   return roles
     .map(role => {
-      if (role === currentRole) {
-        return `<option value="${role}" selected>${role}</option>`;
-      } else {
-        return `<option value="${role}">${role}</option>`;
-      }
+      return `<option value="${role}" ${role === currentRole ? "selected" : ""}>${role}</option>`;
     })
     .join("");
 }
@@ -73,6 +69,7 @@ function populateTable(users) {
   getActivityStatus();
   getRole();
   updateUser();
+  userClick(users);
 }
 
 function checkStatus(status) {
@@ -176,7 +173,7 @@ function updateUser() {
       })
         .then(response => response.json())
         .then(data => {
-          console.log("Success:", data);
+          return data;
         })
         .catch(error => {
           console.error("Error:", error);
@@ -195,6 +192,21 @@ function searchUser() {
     .catch(error => {
       console.error("Error:", error);
     });
+}
+
+function userClick(users) {
+  const fullnameTrows = document.querySelectorAll(".fullname-trow");
+  fullnameTrows.forEach((userElement, index) => {
+    userElement.addEventListener("click", function () {
+      const userId = this.previousElementSibling.previousElementSibling.id;
+      sessionStorage.setItem("id", userId);
+      
+      const currentPage = Math.ceil((index + 1) / usersPerPage);
+      sessionStorage.setItem("pageNumber", currentPage);
+      
+      window.location.href = "./../../userProfile.html";
+    });
+  });
 }
 
 const searchButton = document.querySelector(".search-btn");
