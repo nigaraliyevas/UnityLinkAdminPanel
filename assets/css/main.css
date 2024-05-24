@@ -158,6 +158,10 @@ thead th {
   max-width: 100%;
 }
 
+.fullname-trow {
+  cursor: pointer;
+}
+
 /* Table responsivenes */
 @media (max-width: 576px) {
   .hidden-nav {
@@ -382,4 +386,44 @@ thead th {
   .body-top h3 {
     font-size: 22px;
   }
+}
+/* userProfile.html */
+.user-profile__body {
+  background: white;
+  padding: 1rem !important;
+  border-radius: 8px;
+}
+.user-info {
+  font-weight: 500;
+  font-size: 17px;
+}
+.user-info i {
+  margin-right: 5px;
+  color: #3256a4;
+}
+.user-profile__post {
+  background-color: #f7f7f7;
+  padding: 1rem !important;
+  border-radius: 8px;
+  max-width: 550px;
+}
+.user-profile__post strong {
+  font-size: 1.2rem;
+}
+.user-profile__post-comments strong i {
+  font-size: 1.2rem;
+  margin-right: 5px;
+  color: #3256a4;
+}
+.user-profile__body p .user-profile__body h3,
+.user-profile__body strong {
+  color: #272933;
+}
+.user-profile__post-comment {
+  max-width: 500px;
+  text-align: justify;
+}
+.img-round {
+  border-radius: 50%;
+  border: 1px solid #eee;
 }
