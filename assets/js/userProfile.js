@@ -120,7 +120,8 @@ async function populateUserPosts(posts = []) {
   getDeleteCommentBtn();
 }
 
-// function for get results of api and populateUserProfile,populateUserPosts
+// function for get results of api and 
+//populateUserProfile,populateUserPosts
 async function init() {
   try {
     const userData = await fetchUser();

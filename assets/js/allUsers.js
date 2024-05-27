@@ -184,7 +184,7 @@ function updateUser() {
 
 function searchUser() {
   const searchValue = document.querySelector(".search-input").value;
-  fetch(`http://nadir.somee.com/api/usersmanagment/getsearchusers/${searchValue}`)
+  fetch(`http://nadir.somee.com/api/usersmanagment/GetSearchUsers/(${searchValue}`)
     .then(response => response.json())
     .then(data => {
       populateTable(data.users);
@@ -200,10 +200,10 @@ function userClick(users) {
     userElement.addEventListener("click", function () {
       const userId = this.previousElementSibling.previousElementSibling.id;
       sessionStorage.setItem("id", userId);
-      
+
       const currentPage = Math.ceil((index + 1) / usersPerPage);
       sessionStorage.setItem("pageNumber", currentPage);
-      
+
       window.location.href = "./../../userProfile.html";
     });
   });

@@ -108,18 +108,18 @@
   color: #3256a4;
   font-weight: 500;
 }
-table {
+.all-users__table table {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-.table th,
-.table td {
+.all-users__table .table th,
+.all-users__table .table td {
   color: #00162b;
   padding: 15px !important;
 }
-tbody td {
+.all-users__table tbody td {
   vertical-align: middle;
 }
-thead th {
+.all-users__table thead th {
   text-align: center;
 }
 .remove-user {
@@ -143,18 +143,18 @@ thead th {
   border: 2px solid #3256a4;
   border-radius: 5px;
 }
-.table thead tr th {
+.all-users__table .table thead tr th {
   width: max-content;
 }
-.trow td:nth-of-type(2n) {
+.all-users__table .trow td:nth-of-type(2n) {
   background-color: #fafafd;
 }
-.table-body tr td {
+.all-users__table .table-body tr td {
   text-align: center;
   width: max-content;
   padding: 10px !important;
 }
-.table-container {
+.all-users__table .table-container {
   max-width: 100%;
 }
 
@@ -170,14 +170,14 @@ thead th {
   .nav-list a {
     font-size: 15px;
   }
-  .table-body {
+  .all-users__table .table-body {
     display: flex;
     flex-wrap: wrap;
   }
-  .table-body tr {
+  .all-users__table .table-body tr {
     width: 50%;
   }
-  .table-body tr td {
+  .all-users__table .table-body tr td {
     width: 100%;
     display: block;
     width: 100%;
@@ -186,23 +186,24 @@ thead th {
     grid-template-columns: 8ch auto;
     align-items: center;
   }
-  table {
+  .all-users__table table {
     width: 100% !important;
   }
-  td::before {
+  .all-users__table td::before {
     content: attr(data-cell) ":";
     font-weight: 500;
   }
-  td:first-child {
+
+  .all-users__table td:first-child {
     padding-top: 2rem;
   }
-  td:last-child {
+  .all-users__table td:last-child {
     padding-bottom: 2rem;
   }
-  th {
+  .all-users__table th {
     display: none;
   }
-  tr {
+  .all-users__table tr {
     display: block;
     margin-bottom: 30px;
   }
@@ -227,14 +228,14 @@ thead th {
   .nav-list a {
     font-size: 15px;
   }
-  .table-body {
+  .all-users__table .table-body {
     display: flex;
     flex-wrap: wrap;
   }
-  .table-body tr {
+  .all-users__table .table-body tr {
     width: 50%;
   }
-  .table-body tr td {
+  .all-users__table .table-body tr td {
     width: 100%;
     display: block;
     width: 100%;
@@ -243,23 +244,23 @@ thead th {
     grid-template-columns: 15ch auto;
     align-items: center;
   }
-  table {
+  .all-users__table table {
     width: 100% !important;
   }
-  td::before {
+  .all-users__table td::before {
     content: attr(data-cell) ":";
     font-weight: 500;
   }
-  td:first-child {
+  .all-users__table td:first-child {
     padding-top: 2rem;
   }
-  td:last-child {
+  .all-users__table td:last-child {
     padding-bottom: 2rem;
   }
-  th {
+  .all-users__table th {
     display: none;
   }
-  tr {
+  .all-users__table tr {
     display: block;
     margin-bottom: 30px;
   }
@@ -274,8 +275,6 @@ thead th {
     display: block !important;
     margin-bottom: 10px;
   }
-  .search-area button {
-  }
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .hidden-nav {
@@ -284,14 +283,14 @@ thead th {
   .nav-list a {
     font-size: 15px;
   }
-  .table-body {
+  .all-users__table .table-body {
     display: flex;
     flex-wrap: wrap;
   }
-  .table-body tr {
+  .all-users__table .table-body tr {
     width: 50%;
   }
-  .table-body tr td {
+  .all-users__table .table-body tr td {
     width: 100%;
     display: block;
     width: 100%;
@@ -300,17 +299,17 @@ thead th {
     grid-template-columns: 15ch auto;
     align-items: center;
   }
-  table {
+  .all-users__table table {
     width: 100% !important;
   }
-  td::before {
+  .all-users__table td::before {
     content: attr(data-cell) ":";
     font-weight: 500;
   }
-  th {
+  .all-users__table th {
     display: none;
   }
-  tr {
+  .all-users__table tr {
     display: block;
     margin-bottom: 30px;
   }
@@ -322,14 +321,14 @@ thead th {
   .nav-list a {
     font-size: 15px;
   }
-  .table-body {
+  .all-users__table .table-body {
     display: flex;
     flex-wrap: wrap;
   }
-  .table-body tr {
+  .all-users__table .table-body tr {
     width: 50%;
   }
-  .table-body tr td {
+  .all-users__table .table-body tr td {
     width: 100%;
     display: block;
     width: 100%;
@@ -338,17 +337,17 @@ thead th {
     grid-template-columns: 15ch auto;
     align-items: center;
   }
-  table {
+  .all-users__table table {
     width: 100% !important;
   }
-  td::before {
+  .all-users__table td::before {
     content: attr(data-cell) ":";
     font-weight: 500;
   }
-  th {
+  .all-users__table th {
     display: none;
   }
-  tr {
+  .all-users__table tr {
     display: block;
     margin-bottom: 30px;
   }
@@ -360,18 +359,18 @@ thead th {
   .nav-list a {
     font-size: 15px;
   }
-  .table thead tr th {
+  .all-users__table .table thead tr th {
     width: max-content;
     padding: 5px !important;
     font-size: 15px;
   }
-  .table thead th {
+  .all-users__table .table thead th {
     text-align: left;
   }
   .update-btn {
     font-size: 15px;
   }
-  .table-body tr td {
+  .all-users__table .table-body tr td {
     text-align: left;
     width: 200px !important;
     padding: 5px !important;
@@ -426,4 +425,29 @@ thead th {
 .img-round {
   border-radius: 50%;
   border: 1px solid #eee;
+}
+/* CreateEvent html */
+.create-event__body {
+  background: white;
+  border-radius: 5px;
+  padding: 2rem !important;
+  /* max-width: 600px; */
+}
+#create-event__form .form-group input {
+  padding: 6px !important;
+}
+#create-event__form .form-group input {
+  padding: 6px !important;
+}
+#create-event__form input[type="datetime-local"],
+#create-event__form input[type="file"],
+#create-event__form input[type="checkbox"] {
+  padding: 6px !important;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.create-event__users tr td,
+.create-event__users th {
+  padding: 8px !important;
 }
