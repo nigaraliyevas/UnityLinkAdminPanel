@@ -31,7 +31,7 @@ async function fetchUserComments(postId) {
   }
 }
 
-// function for html code of posts 
+// function for html code of posts
 async function createPost(post) {
   try {
     const comments = await fetchUserComments(post.postId);
@@ -40,12 +40,12 @@ async function createPost(post) {
 
     postDiv.innerHTML = `
       <span data-postid="${post.postId}" class="d-none postId"></span>
-      ${post.imageUrl ? `<img src="${post.imageUrl}" height="200" width="200" alt="" class="user-profile__post-img" />` : ''}
+      ${post.imageUrl ? `<img src="${post.imageUrl}" height="200" width="200" alt="" class="user-profile__post-img" />` : ""}
       <strong class="user-profile__post-content d-block mb-4">${post.content}</strong>
       <div class="user-profile__post-comments">
         <strong class="d-block mb-3"><i class="fa-solid fa-comments"></i> Rəylər</strong>
         <hr />
-        ${comments.length > 0 ? comments.map(comment => createComment(comment)).join("") : '<p>Rəy yoxdur</p>'}
+        ${comments.length > 0 ? comments.map(comment => createComment(comment)).join("") : "<p>Rəy yoxdur</p>"}
       </div>
       <nav class="d-flex justify-content-center mb-4">
         <div class="pagination pages">
@@ -63,8 +63,7 @@ async function createPost(post) {
   }
 }
 
-
-// function for html code of comments area 
+// function for html code of comments area
 function createComment(comment) {
   return `
     <div class="user-profile__post-comment mb-3">
@@ -83,7 +82,7 @@ function createComment(comment) {
   `;
 }
 
-// function for html code of user 
+// function for html code of user
 function createUserProfile(user) {
   const userDiv = document.createElement("div");
   userDiv.innerHTML = `
@@ -120,7 +119,7 @@ async function populateUserPosts(posts = []) {
   getDeleteCommentBtn();
 }
 
-// function for get results of api and 
+// function for get results of api and
 //populateUserProfile,populateUserPosts
 async function init() {
   try {
@@ -148,7 +147,7 @@ function changeDateFormat(dateTime) {
 
 // function for get related delete comment btn
 // in here I pass commentId to deleteComment(commentId) for delete related comment
-function getDeleteCommentBtn(){
+function getDeleteCommentBtn() {
   const deleteCommentBtns = document.querySelectorAll(".delete-comment");
   deleteCommentBtns.forEach(btn => {
     btn.addEventListener("click", function () {
@@ -159,7 +158,7 @@ function getDeleteCommentBtn(){
   });
 }
 
-// function for request api for deleteComment 
+// function for request api for deleteComment
 // commentId comes from getDeleteCommentBtn() function
 function deleteComment(commentId) {
   fetch(`http://nadir.somee.com/api/UsersManagment/DeleteUserComment/${commentId}`, {
@@ -180,6 +179,7 @@ function deleteComment(commentId) {
     })
     .catch(error => {
       console.error("There was a problem with the fetch operation:", error);
+      window.location.reload();
     });
 }
 
@@ -196,7 +196,7 @@ function getDeletePostBtn() {
   });
 }
 
-// function for request api for deletePost 
+// function for request api for deletePost
 // postId comes from getDeletePostBtn() function
 function deletePost(postId) {
   fetch(`http://nadir.somee.com/api/UsersManagment/DeleteUserPost/${postId}`, {

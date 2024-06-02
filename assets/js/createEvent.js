@@ -37,6 +37,7 @@ $(document).ready(function () {
   $("#create-event__form").submit(function (event) {
     event.preventDefault();
     uploadImage();
+    checkInputsNullOrEmpty();
   });
 
   init();
@@ -74,7 +75,6 @@ function createUserRow(user) {
         selectedUsersId.splice(index, 1);
       }
     }
-    console.log(selectedUsersId);
   });
 
   return row;
@@ -167,6 +167,12 @@ function createEvent(imageBase64) {
     .then(data => {
       console.log("Event created successfully:", data);
     })
+    .then(response => {
+      if (response.status == 200 || response.status == 204) {
+        console.log("Request successful with status 200: OK");
+        // Handle the response if needed
+      }
+    })
     .catch(error => {
       console.error("There was a problem with the fetch operation:", error);
     });
@@ -187,14 +193,18 @@ function uploadImage() {
     const reader = new FileReader();
 
     reader.onload = function (ev) {
-      const imageBase64 = ev.target.result.split(",")[1]; // Get base64 part only
+      const imageBase64 = ev.target.result.split(",")[1];
       createEvent(imageBase64);
     };
 
-    reader.readAsDataURL(file); // Read file as data URL
+    reader.readAsDataURL(file); 
   } else {
-    alert("File not selected");
+    alert("File seçilmədi");
   }
 }
-
+function checkInputsNullOrEmpty() {
+  if (document.querySelector("#Title").value.trim() === null || document.querySelector("#Title").value.trim() == "" || document.querySelector("#Content").value.trim() === null || document.querySelector("#Content").value.trim() == "" || document.querySelector("#Address").value.trim() === null || document.querySelector("#Address").value.trim() == "" || document.querySelector("#DateTime").value === null || document.querySelector("#DateTime").value == "") {
+    return alert("Xanalar boş ola bilməz!");
+  }
+}
 init();

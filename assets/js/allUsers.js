@@ -70,6 +70,7 @@ function populateTable(users) {
   getRole();
   updateUser();
   userClick(users);
+  searchUser();
 }
 
 function checkStatus(status) {
@@ -183,15 +184,20 @@ function updateUser() {
 }
 
 function searchUser() {
-  const searchValue = document.querySelector(".search-input").value;
-  fetch(`http://nadir.somee.com/api/usersmanagment/GetSearchUsers/(${searchValue}`)
-    .then(response => response.json())
-    .then(data => {
-      populateTable(data.users);
-    })
-    .catch(error => {
-      console.error("Error:", error);
-    });
+  const searchButton = document.querySelector(".search-btn");
+  searchButton.addEventListener("click", event => {
+    event.preventDefault();
+    const searchValue = document.querySelector(".search-input").value;
+    fetch(`http://nadir.somee.com/api/usersmanagment/GetSearchUsers/${searchValue}`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        populateTable(data);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+  });
 }
 
 function userClick(users) {
@@ -208,9 +214,6 @@ function userClick(users) {
     });
   });
 }
-
-const searchButton = document.querySelector(".search-btn");
-searchButton.addEventListener("click", searchUser);
 
 const filterSelect = document.getElementById("select");
 filterSelect.addEventListener("change", function () {
