@@ -474,3 +474,23 @@
   color: #00162b;
   font-weight: 700;
 }
+/* allQuestions.html */
+.question {
+  max-width: 32%;
+  min-width: 350px;
+  background: #00162b;
+  padding: 1.5rem !important;
+  border-radius: 7px;
+  transition: 0.3s;
+  flex: 1;
+}
+.question:hover {
+  transform: translateY(-10px);
+}
+.question h6 {
+  font-weight: 700;
+  color: white;
+}
+.question p {
+  color: white;
+}

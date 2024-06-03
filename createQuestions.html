@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -79,54 +78,26 @@
                 <h5 class="date-time"></h5>
               </div>
             </section>
-            <div class="all-users">
+            <div class="create-event mb-5">
               <div class="container-lg">
-                <div class="all-users__body">
-                  <div class="d-flex justify-content-between align-items-center mb-4 body-top">
-                    <h3 class="d-inline-block">İstifadəçilər</h3>
-                    <div class="d-flex gap-2 search-area">
-                      <div class="all-users__filter">
-                        <select name="" id="select">
-                          <option value="all">Bütün İstifadəçilər</option>
-                          <option value="confirmedActivity">Aktivliyi təsdiq edilməmiş istifadəçilər</option>
-                          <option value="unconfirmedEmail">Email-i təsdiq edilməmiş istifadəçilər</option>
-                          <!-- <option value="unconfirmedNumber">Nömrəsi təsdiq edilməmiş istifadəçilər</option> -->
-                        </select>
-                      </div>
-                      <form>
-                        <input type="text" name="search" id="search" placeholder="İstifadəçini axtarış edin" class="p-2 search-input" />
-                        <button class="btn btn-success p-2 search-btn">Axtar</button>
+                <div class="w-75">
+                  <div class="create-event__body">
+                    <div class="create-event__form-area">
+                      <h2 class="text-center">Sorğu yarat</h2>
+                      <form id="create-event__form">
+                        <div class="form-group">
+                          <label for="title">Başlıq</label>
+                          <input type="text" class="form-control" name="title" id="title" placeholder="Başlığı daxil edin" />
+                        </div>
+                        <div class="form-group mb-2">
+                          <label for="content" class="d-block">Cavab</label>
+                          <textarea class="w-100" name="answer" id="answer" placeholder="Cavabı daxil edin"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary create-question__btn py-1 px-2">Submit</button>
                       </form>
                     </div>
                   </div>
-                  <div class="all-users__table">
-                    <div class="table-container table-responsive-sm">
-                      <table class="table table-bordered">
-                        <thead>
-                          <tr>
-                            <th scope="col">Şəkil</th>
-                            <th scope="col">Ad və Soyad</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Şirkət</th>
-                            <th scope="col">Vəzifə</th>
-                            <th scope="col">İstifadəçi adı</th>
-                            <th scope="col">Telefon</th>
-                            <th scope="col">Roles</th>
-                            <th scope="col">Email Status</th>
-                            <!-- <th scope="col">Telefon Status</th> -->
-                            <th scope="col">Aktiv Status</th>
-                            <th scope="col">Aktivlik Statusunun Redaktəsi</th>
-                            <th scope="col" class="align-middle"><i class="fa-solid fa-gears fa-2xl" style="color: #00162b"></i></th>
-                          </tr>
-                        </thead>
-                        <tbody class="table-body"></tbody>
-                      </table>
-                    </div>
-                  </div>
                 </div>
-                <nav class="d-flex justify-content-center mb-4">
-                  <div class="pagination pages"></div>
-                </nav>
               </div>
             </div>
           </div>
@@ -185,6 +156,6 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/common.js"></script>
-    <script src="./assets/js/allUsers.js"></script>
+    <script src="./assets/js/createQuestions.js"></script>
   </body>
 </html>
