@@ -11,9 +11,9 @@ function getFilterParams(filter) {
     case "allUsers":
       return "false/false";
     case "isAllUsers":
-      return "true/false";
-    case "IsActive":
       return "false/true";
+    case "IsActive":
+      return "true/false";
     default:
       return "false/false";
   }
